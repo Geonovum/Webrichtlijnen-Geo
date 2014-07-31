@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<meta name="robots" content="index, follow">
+	<meta name="description" content="Voorbeeld Openbare toiletten Nijmegen - toegankelijke informatie en kaart"  />
+	<meta name="keywords" content="Webrichtlijnen, geo, openbare toiletten, voorbeeld"  />
+
+	<title>Voorbeeld Openbare toiletten Nijmegen - toegankelijke informatie en kaart</title>
+
+	<!-- CSS van js-bibliotheek Leaflet laden  -->
+	<link rel="stylesheet" href="./js/css/leaflet.css"  />
+
+	<!-- Voor het voorbeeld: zet de CSS code inline --> 
+	<style type="text/css">
+		#map { 
+			height: 400px;
+		    width: 800px;
+			display: none;
+		}
+
+		.jsenabled {
+			display: block !important;
+		}
+
+		/* Leaflet overrules */
+		/* for some leaflet functions, make keyboard focus more clear */
+		.leaflet-marker-icon:focus {
+		    border: 2px solid red;    
+		}
+	</style>
+
+ 	<script src="./js/leaflet.js" type="text/javascript"></script>
+ 	<script src="./js/jquery-1.9.0.min.js" type="text/javascript"></script>
+
+	<!-- Voor het voorbeeld: zet de script code inline --> 
+	<script>
+	function initMap(mapId, hide) {
+		// Als javascript aanstaat, voeg een CSS class toe aan de div voor de kaart
+		// met de css wordt dit dan getoond
+		$("#"+mapId).addClass( "jsenabled" );
+		// zoom in naar Den Haag, met lon/lat van Den Haag
+		var map = L.map(mapId).setView([52.1, 5.1],8);
+
+		// Gebruik OpenStreetMap als achtergrondkaart
+		var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+		var osmAttrib='Map data © OpenStreetMap contributors';
+		var osm = new L.tileLayer(osmUrl, {minZoom: 1, maxZoom: 19, attribution: osmAttrib}).addTo(map);
+
+		var toiletten = {};
+		// Dit voorbeeld gebruikt Jquery methodes voor het uitvoeren van Ajax calls. Uiteraard kan dit ook anders, met eigen code of andere bibliotheken
+		// Het kaartje wordt gemaakt met Leaflet.js
+		$.ajax({
+	        type: "GET",
+	        url: "data/openbaretoiletten.json",
+	        dataType: "json",
+	        success: function(resp){ 
+	        	toiletten = L.geoJson(resp,
+					{ onEachFeature: onEachFeature} ).addTo(map);
+	        	
+				map.fitBounds(toiletten.getBounds());
+
+	    	}
+		});
+
+		// Verberg de HTML indien gewenst (zie init functie in de HTML)
+		// Voor het voorbeeld blijft dit staan.		
+		if (hide) {
+			$("#lijsttitel").hide();
+			$("#toilettenlijst").hide();
+		}
+	}
+
+	// Dit voorbeeld gebruikt data en genereert daar een (toegankelijke) lijst bij. Gebruik van Javascript is toegestaan volgens WCAG2, mits toegankelijk.
+	function onEachFeature(feature, layer, listElem) {
+		// probeer te geocoderen, voor dit voorbeeld is dat nodig
+		var reverseGeocode = true;
+		// de name als titel gebruiken, beschrijving indien beschikbaar meegeven
+		var popupContent = "";
+		if (feature.properties) {				
+			popupContent += "<h3>"+feature.properties.Name+"</h3>";
+			if (feature.properties.Description) popupContent += "<p>Opmerkingen: "+feature.properties.Description+"</p>";
+			else popupContent += "<p>Opmerkingen: geen</p>";
+		}
+		// Omdat de data van dit voorbeeld adresinformatie mist, zoeken we dat er via onderstaande code bij.
+		// Beter was het als de adresinformatie in de data zelf aanwezig zou zijn. Maar dit kan ook.
+		// De code hieronder is niet nodig als de data van de openbare toiletten adresinformatie zou bevatten.
+		if (reverseGeocode) {
+			$.ajax({
+	            type: "GET",
+	            url: "http://nominatim.openstreetmap.org/reverse?format=json&lat=" + feature.geometry.coordinates[1]+"&lon="+ feature.geometry.coordinates[0],
+				dataType: "json",
+	            success: function(resp){ 
+	            	var adres = "";
+	            	if(resp.address.pedestrian) {
+	            		adres += resp.address.pedestrian;
+	            	} else if (resp.address.road){
+	            		adres += resp.address.road;
+	            	}
+	            	if (resp.address.house_number) {
+	            		adres += " " + resp.address.house_number;
+	            	}
+	            	if (resp.address.city) {
+	            		adres += " " + resp.address.city;
+	            	}
+	            	if (adres.length > 0) popupContent+="<p>Adres: " + adres + "</p>";
+					// de popup toevoegen aan de kaart
+					layer.bindPopup(popupContent);
+					// voeg de popup inhoud ook toe aan de lijst
+					$("#toilettenlijst").append("<li>"+popupContent+"</li>");
+	        	}
+			});   
+		} else {
+			// de popup toevoegen aan de kaart
+			layer.bindPopup(popupContent);
+			// voeg de popup inhoud ook toe aan de lijst
+			$("#toilettenlijst").append("<li>"+popupContent+"</li>");
+		}
+	}
+	</script>
+</head> 
+<body>
+	<header>
+		<h1>Voorbeeld Openbare toiletten Nijmegen - toegankelijke informatie en kaart</h1>
+    </header>	
+	<article>
+		<section>				
+			<h2>Uitleg</h2>
+			<p>Voorbeeld in het kader van de handreiking Webrichtlijnen &amp; geo-informatie en Toepassingskader. De gegevens worden uit een <a href="data/openbaretoiletten.json">GeoJSON bestand</a> geladen en vervolgens op de <a href="#kaarttitel">kaart</a> getoond en in de <a href="#toilettenlijst">lijst</a> gezet.
+			</p>
+			<p>De kaart is te bedienen met het toetsenbord. Gebruik de TAB-toets om er naar toe te gaan en door de gegevens op de kaart te lopen. Met Enter is een popup te openen en sluiten.</p>
+			<p>Merk op dat WCAG2 en Webrichtlijnen versie 2 het gebruik van Javascript om de pagina op te bouwen toestaan. Dit voorbeeld gaat er vanuit dat Javascript te gebruiken is.</p>
+			<p>Nota bene: de oorspronkelijke gegevens in dit voorbeeld missen adresinformatie voor elk toilet. Dit voorbeeld verrijkt de gegevens van de openbare toiletten met adresinformatie. Dat gebeurt automatisch en is niet gecontroleerd. Hierdoor kunnen er fouten in de gegevens zelf zitten, maar dit is voor het voorbeeld niet zo relevant. Er is ook <a href="toiletten.html">een voorbeeld zonder adresinformatie</a></p>
+			<h2 id="kaarttitel">Resultaat: openbare toiletten van Nijmegen op een kaart en in een lijst</h2>
+			<a href="#toilettenlijst">naar de lijst</a>
+			<div id="map"></div>
+			<ul id="toilettenlijst">			
+			</ul>
+			<a href="#kaarttitel">naar de kaart</a>
+		</section>			
+	</article>
+
+<script>initMap("map", false)</script>
+</body>
+</html>

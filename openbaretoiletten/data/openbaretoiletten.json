@@ -1,0 +1,40 @@
+{
+"type": "FeatureCollection",
+                                                                                
+"features": [
+{ "type": "Feature", "properties": { "Name": "Station Nijmegen C.S.", "Description": "Met personeel" }, "geometry": { "type": "Point", "coordinates": [ 5.85282683372502, 51.842940164546036 ] } }
+,
+{ "type": "Feature", "properties": { "Name": "Politiebureau", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ 5.854532718658492, 51.844862383167765 ] } }
+,
+{ "type": "Feature", "properties": { "Name": "Garage Kelfkensbosch", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ 5.869563817977948, 51.846671845005403 ] } }
+,
+{ "type": "Feature", "properties": { "Name": "Garage Van Schaeck Mathonsingel", "Description": "in aanbouw" }, "geometry": { "type": "Point", "coordinates": [ 5.857166647911128, 51.842323711537304 ] } }
+,
+{ "type": "Feature", "properties": { "Name": "Molenpoortpassage", "Description": "met personeel" }, "geometry": { "type": "Point", "coordinates": [ 5.863700509071441, 51.8441896159867 ] } }
+,
+{ "type": "Feature", "properties": { "Name": "Openbare Bibliotheek", "Description": "Kindertoilet is gratis" }, "geometry": { "type": "Point", "coordinates": [ 5.867021083831862, 51.845369437501667 ] } }
+,
+{ "type": "Feature", "properties": { "Name": "Stadhuis", "Description": "sleutel bevragen bij receptie" }, "geometry": { "type": "Point", "coordinates": [ 5.865658521652282, 51.846910449929325 ] } }
+,
+{ "type": "Feature", "properties": { "Name": "Stadswinkel", "Description": "Melden bij de receptie, beveiliging opent deur." }, "geometry": { "type": "Point", "coordinates": [ 5.866892337799134, 51.844637023852641 ] } }
+,
+{ "type": "Feature", "properties": { "Name": "Marienbeurs", "Description": "Melden bij de receptie" }, "geometry": { "type": "Point", "coordinates": [ 5.867251753807111, 51.845326354675692 ] } }
+,
+{ "type": "Feature", "properties": { "Name": "Urilift", "Description": "Alleen op uitgangsavonden" }, "geometry": { "type": "Point", "coordinates": [ 5.861458182334962, 51.843755460399045 ] } }
+,
+{ "type": "Feature", "properties": { "Name": "Urilift", "Description": "Alleen op uitgangsavonden" }, "geometry": { "type": "Point", "coordinates": [ 5.862600803375307, 51.844610510917853 ] } }
+,
+{ "type": "Feature", "properties": { "Name": "Kronenburgpark", "Description": "wordt Urilift" }, "geometry": { "type": "Point", "coordinates": [ 5.856796503067045, 51.848037178314485 ] } }
+,
+{ "type": "Feature", "properties": { "Name": "Joris Ivensplein", "Description": "wordt Urilift" }, "geometry": { "type": "Point", "coordinates": [ 5.856839418411294, 51.848713201807385 ] } }
+,
+{ "type": "Feature", "properties": { "Name": "Urilift", "Description": "in voorbereiding, alleen tijdens uitgaansavonden" }, "geometry": { "type": "Point", "coordinates": [ 5.869113206863429, 51.846433238816587 ] } }
+,
+{ "type": "Feature", "properties": { "Name": "Kiosk", "Description": "1 toilet voor D\/H\/G in kioskvorm: wordt automatisch gereinigd." }, "geometry": { "type": "Point", "coordinates": [ 5.860701799392721, 51.843158903907145 ] } }
+,
+{ "type": "Feature", "properties": { "Name": "MariÃ«nburg", "Description": "Toilet in reclamezuil: automatisch gereinigd" }, "geometry": { "type": "Point", "coordinates": [ 5.867407321929921, 51.844975062402177 ] } }
+,
+{ "type": "Feature", "properties": { "Name": "Busstation Dukenburg", "Description": "Toilet in reclamezuil: automatisch gereinigd" }, "geometry": { "type": "Point", "coordinates": [ 5.79308867454538, 51.82340179093552 ] } }
+
+]
+}

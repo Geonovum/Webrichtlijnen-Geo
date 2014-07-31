@@ -1,0 +1,38 @@
+body
+{
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: .9em;
+	padding: 50px;
+	line-height: 1.2em;
+}
+
+h1
+{
+	font-size: 3em;
+}
+
+h2
+{
+	font-size: 1.5em;
+	margin-bottom: 15px;
+}
+
+h1, p, ol, ul, div
+{
+	margin-bottom: 50px;
+}
+
+pre
+{
+	border: 1px solid #aaa;
+	padding: 10px;
+	background: #ffc;
+	white-space: pre-wrap;
+	white-space: -moz-pre-wrap;
+	white-space: -pre-wrap;
+	white-space: -o-pre-wrap;
+	word-wrap: break-word;
+	margin-bottom: 10px;
+	font-size: .8em;
+	font-family: Courier;
+}

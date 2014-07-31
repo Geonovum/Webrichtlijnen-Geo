@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="nl">
+    <head>
+        <meta charset="utf-8" />
+        <title>Overzicht ministeries (met HTMAPL)</title>
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+        <meta name="robots" content="noindex, nofollow" />
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/wrgeo.css" />
+        <link rel="stylesheet" href="css/overzicht-ministeries-htmapl.css" />
+    </head>
+    <body>        
+        <h1>Overzicht ministeries (met HTMAPL)</h1>        
+        <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/modestmaps.js"></script>
+<script type="text/javascript" src="js/modestmaps.markers.js"></script>
+<script type="text/javascript" src="js/htmapl.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+<div class="map" data-center="52.083, 4.325" data-zoom="15" data-provider="cloudmade:paledawn">
+    
+    <div class="controls">
+        <button data-action="zoomIn">+</button>
+        <button data-action="zoomOut">-</button>
+    </div>
+    
+	<div class="marker" data-location="52.07971, 4.34285">
+		<a href="#">Ministerie van Sociale Zaken en Werkgelegenheid</a>
+	</div>
+    
+	<div class="marker" data-location="52.07920, 4.32139">
+		<a href="#">Ministerie van Veiligheid en Justitie</a>
+	</div>
+    
+	<div class="marker" data-location="52.07913, 4.32129">
+		<a href="#">Ministerie van Binnenlandse Zaken en Werkgelegenheid</a>
+	</div>
+    
+	<div class="marker" data-location="52.08255, 4.31716">
+		<a href="#">Ministerie van Financi&euml;le Zaken</a>
+	</div>
+    
+	<div class="marker" data-location="52.07994, 4.31320">
+		<a href="#">Ministerie van Algemene Zaken</a>
+	</div>
+
+</div> 
+        
+        <h2>HTML</h2>
+        <pre>&lt;script type=&quot;text/javascript&quot; src=&quot;js/jquery-1.7.1.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;js/modestmaps.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;js/modestmaps.markers.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;js/htmapl.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;js/js.js&quot;&gt;&lt;/script&gt;
+
+&lt;div class=&quot;map&quot; data-center=&quot;52.083, 4.325&quot; data-zoom=&quot;15&quot; data-provider=&quot;cloudmade:paledawn&quot;&gt;
+    
+    &lt;div class=&quot;controls&quot;&gt;
+        &lt;button data-action=&quot;zoomIn&quot;&gt;+&lt;/button&gt;
+        &lt;button data-action=&quot;zoomOut&quot;&gt;-&lt;/button&gt;
+    &lt;/div&gt;
+    
+	&lt;div class=&quot;marker&quot; data-location=&quot;52.07971, 4.34285&quot;&gt;
+		&lt;a href=&quot;#&quot;&gt;Ministerie van Sociale Zaken en Werkgelegenheid&lt;/a&gt;
+	&lt;/div&gt;
+    
+	&lt;div class=&quot;marker&quot; data-location=&quot;52.07920, 4.32139&quot;&gt;
+		&lt;a href=&quot;#&quot;&gt;Ministerie van Veiligheid en Justitie&lt;/a&gt;
+	&lt;/div&gt;
+    
+	&lt;div class=&quot;marker&quot; data-location=&quot;52.07913, 4.32129&quot;&gt;
+		&lt;a href=&quot;#&quot;&gt;Ministerie van Binnenlandse Zaken en Werkgelegenheid&lt;/a&gt;
+	&lt;/div&gt;
+    
+	&lt;div class=&quot;marker&quot; data-location=&quot;52.08255, 4.31716&quot;&gt;
+		&lt;a href=&quot;#&quot;&gt;Ministerie van Financi&amp;euml;le Zaken&lt;/a&gt;
+	&lt;/div&gt;
+    
+	&lt;div class=&quot;marker&quot; data-location=&quot;52.07994, 4.31320&quot;&gt;
+		&lt;a href=&quot;#&quot;&gt;Ministerie van Algemene Zaken&lt;/a&gt;
+	&lt;/div&gt;
+
+&lt;/div&gt;</pre>
+        <p>
+            Of bekijk <a href="html/overzicht-ministeries-htmapl.html">html/overzicht-ministeries-htmapl.html</a>
+        </p>
+        
+        <h2>CSS</h2>
+        <pre>div.map {
+	width: 100%;
+	height: 500px;
+}
+
+div.map .controls {
+    position: absolute;
+    z-index: 99;
+    right: 4px;
+    top: 4px;
+}
+
+div.map .controls button {
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    background-color: #f00;
+    border: 1px solid white;
+    border: 1px solid rgba(255,255,255,.3);
+    line-height: 1.5em;
+    margin: 0;
+}
+
+.marker a {
+    display: inline-block;
+    color: inherit;
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+    background: #f00;
+    padding: 10px;
+    width: 0;
+    height: 0;
+    margin: -5px 0 0 -5px;
+    font-size: 0;
+    overflow: hidden;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    transition: .1s;
+}
+
+.marker a:hover, .marker a:focus {
+	width: auto;
+	height: auto;
+	font-size: 12px;
+	padding-left: 20px;
+}
+
+.marker:hover, .marker:focus
+{
+	z-index: 999;	
+}</pre>
+        <p>
+            Of bekijk <a href="css/overzicht-ministeries-htmapl.css">css/overzicht-ministeries-htmapl.css</a>
+        </p>
+        
+        <p>
+        	<a href=".">Terug</a>
+        </p>
+        
+    </body>
+</html>

@@ -1,0 +1,41 @@
+.ministeries
+{
+	background: url(img/denhaag.png);
+	height: 500px;
+	width: 650px;
+	position: relative;
+}
+
+.ministeries a
+{
+	position: absolute;
+	width: 0;
+	height: 0;
+	background: red;
+	overflow: hidden;
+	padding: 10px 10px 0 0;
+	font-size: .8em;
+}
+
+.ministeries a:focus, .ministeries a:hover
+{
+	width: 200px;
+	padding: 10px 25px;
+	height: auto;
+	background: #ddd;
+	border: 1px solid #999;
+	margin: -1px;
+	z-index: 99;
+}
+
+.minaz { top: 150px; left: 400px; }
+.minbzk { top: 50px; left: 150px; }
+.minbz { top: 100px; left: 350px; }
+.mindef	{ top: 200px; left: 550px; }
+.minez { top: 250px; left: 300px; }
+.minfin { top: 300px; left: 50px; }
+.minienm { top: 350px; left: 450px; }
+.minocw { top: 400px; left: 100px; }
+.minszw { top: 450px; left: 250px; }
+.minvenj { top: 125px; left: 200px; }
+.minvws { top: 225px; left: 500px; }
