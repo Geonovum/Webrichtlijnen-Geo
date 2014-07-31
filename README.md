@@ -46,3 +46,12 @@ Het voorbeeld 'overzichtministeries-HTMAPL' toont hoe een HTML lijst op een inte
 Dit voorbeeld is werkend te zien via Raw Git:  
 [https://rawgit.com/Geonovum/Webrichtlijnen-Geo/master/overzichtministeries-HTMAPL/index.html](https://rawgit.com/Geonovum/Webrichtlijnen-Geo/master/overzichtministeries-HTMAPL/index.html)
 
+
+Natura 2000: gebiedsinformatie bevragen
+---------------------------------------
+Het voorbeeld 'natura2000' laat zien hoe je de vraag "Ligt mijn huis in een Natura 2000 gebied?" tekstueel kan beantwoorden (ja/nee), gebruik makend van geo-informatie. Dit is een voorbeeld van een toegankelijke aanpak van gebruik van gebieds-informatie (vlakken). 
+
+Er zijn gegevens van Natura2000 gebieden beschikbaar via een zogenaamde Web Feature Service van [Natura 2000](http://geodata.nationaalgeoregister.nl/natura2000/wfs?request=GetCapabilities&service=WFS). Deze gegevens bevatten onder andere de geografische kenmerken van een gebied. Deze geo-informatie kan je tonen op een kaart. Maar je kan deze informatie ook gebruiken om te bepalen of een bepaald adres in een gebied ligt of niet. Dit voorbeeld geeft eenvoudigweg een Ja/Nee antwoord op de vraag of een adres in een Natura 2000 gebied ligt. Het zoekt eerst naar de locatie van het opgegeven adres en vervolgens bepaalt het of deze locatie in de buurt van een Natura 2000 gebied valt. Het antwoord is simpelweg 'ja' of 'nee'.
+
+Dit voorbeeld is geschreven in PHP. Een online demonstratie hiervan is op dit moment niet voorhanden. Op de meeste webservers die PHP ondersteunen zou dit voorbeeld direct moeten kunnen draaien.
+
