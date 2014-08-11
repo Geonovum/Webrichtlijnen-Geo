@@ -5,7 +5,7 @@ Deze repository bevat code-voorbeelden voor Webrichtlijnen en geo-informatie. On
 
 Deze voorbeelden zijn gemaakt door het projectteam Webrichtlijnen en Geo, van Geonovum en ICTU.
 
-Licensie
+Licentie
 --------
 Tenzij anders aangegeven in de gebruikte bestanden, zoals bij enkele gebruikte JavaScript bibliotheken van derden, is de licentie [BSD](LICENSE). Raadpleeg voor de licentie dus ook de geïmporteerde broncode bestanden.
 
@@ -18,7 +18,7 @@ Dit voorbeeld is werkend te zien via Raw Git:
 
 Nederland areamap
 -----------------
-Het voorbeeld 'nederland-areamap' toont hoe met HTML en een standaard HTML areamap op een afbelding de provinciegrenzen (van enkele provincies, zoals Noord-Holland, Utrecht, Zuid-Holland en Zeeland in dit geval) te gebruiken zijn. Bijvoorbeeld voor links naar meer informatie van een provincie of een titel.
+Het voorbeeld 'nederland-areamap' toont hoe met HTML en een standaard HTML areamap op een afbeelding de provinciegrenzen (van enkele provincies, zoals Noord-Holland, Utrecht, Zuid-Holland en Zeeland in dit geval) te gebruiken zijn. Bijvoorbeeld voor links naar meer informatie van een provincie of een titel.
 
 Dit voorbeeld is werkend te zien via Raw Git:  
 [https://rawgit.com/Geonovum/Webrichtlijnen-Geo/master/nederland-areamap/index.html](https://rawgit.com/Geonovum/Webrichtlijnen-Geo/master/nederland-areamap/index.html)
